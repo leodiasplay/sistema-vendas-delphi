@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/07/05 17:02:34.000.692,=C:\Users\leo\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/07/05 17:37:00.000.031,C:\DELPHI\SISTEMA VENDAS\Unit_MENU.dfm=C:\Users\leo\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/07/05 17:37:00.000.031,C:\DELPHI\SISTEMA VENDAS\Unit_MENU.pas=C:\Users\leo\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/07/05 17:37:10.000.580,C:\DELPHI\SISTEMA VENDAS\SISTEMA.dproj=C:\Users\leo\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2022/07/05 20:23:57.000.922,=C:\Users\leo\Desktop\versao sistema vendas\SISTEMA VENDAS 0.0.1\Unit1.pas</Transaction>
+    <Transaction>2022/07/05 20:25:45.000.703,C:\Users\leo\Desktop\versao sistema vendas\SISTEMA VENDAS 0.0.1\Unit_cadastros.pas=C:\Users\leo\Desktop\versao sistema vendas\SISTEMA VENDAS 0.0.1\Unit1.pas</Transaction>
+    <Transaction>2022/07/05 20:25:45.000.703,C:\Users\leo\Desktop\versao sistema vendas\SISTEMA VENDAS 0.0.1\Unit_cadastros.dfm=C:\Users\leo\Desktop\versao sistema vendas\SISTEMA VENDAS 0.0.1\Unit1.dfm</Transaction>
+    <Transaction>2022/07/05 22:22:15.000.778,=C:\Users\leo\Desktop\versao sistema vendas\SISTEMA VENDAS 0.0.2\Unit1.pas</Transaction>
+    <Transaction>2022/07/05 22:56:28.000.900,C:\Users\leo\Desktop\versao sistema vendas\SISTEMA VENDAS 0.0.2\Unit1.dfm=C:\Users\leo\Desktop\versao sistema vendas\SISTEMA VENDAS 0.0.2\Unitconect.dfm</Transaction>
+    <Transaction>2022/07/05 22:56:28.000.900,C:\Users\leo\Desktop\versao sistema vendas\SISTEMA VENDAS 0.0.2\Unit1.pas=C:\Users\leo\Desktop\versao sistema vendas\SISTEMA VENDAS 0.0.2\Unitconect.pas</Transaction>
+    <Transaction>2022/07/05 22:59:51.000.676,=C:\Users\leo\Desktop\versao sistema vendas\SISTEMA VENDAS 0.0.3\Unit1.pas</Transaction>
+    <Transaction>2022/07/05 23:12:42.000.910,C:\Users\leo\Desktop\versao sistema vendas\SISTEMA VENDAS 0.0.3\Unit_cadastro_iten.dfm=C:\Users\leo\Desktop\versao sistema vendas\SISTEMA VENDAS 0.0.3\Unit1.dfm</Transaction>
+    <Transaction>2022/07/05 23:12:42.000.910,C:\Users\leo\Desktop\versao sistema vendas\SISTEMA VENDAS 0.0.3\Unit_cadastro_iten.pas=C:\Users\leo\Desktop\versao sistema vendas\SISTEMA VENDAS 0.0.3\Unit1.pas</Transaction>
+    <Transaction>2022/07/06 11:10:22.000.758,=C:\Users\leo\Desktop\versao sistema vendas\SISTEMA VENDAS 0.0.3\Unit1.pas</Transaction>
+    <Transaction>2022/07/06 11:10:49.000.218,C:\Users\leo\Desktop\versao sistema vendas\SISTEMA VENDAS 0.0.3\Unitpadrao.pas=C:\Users\leo\Desktop\versao sistema vendas\SISTEMA VENDAS 0.0.3\Unit1.pas</Transaction>
+    <Transaction>2022/07/06 11:10:49.000.218,C:\Users\leo\Desktop\versao sistema vendas\SISTEMA VENDAS 0.0.3\Unitpadrao.dfm=C:\Users\leo\Desktop\versao sistema vendas\SISTEMA VENDAS 0.0.3\Unit1.dfm</Transaction>
+    <Transaction>2022/07/06 14:24:30.197,=C:\Users\leo\Desktop\versao sistema vendas\SISTEMA VENDAS 0.0.4\Unit1.pas</Transaction>
+    <Transaction>2022/07/06 15:29:31.363,C:\Users\leo\Desktop\versao sistema vendas\SISTEMA VENDAS 0.0.4\Unitvendas.dfm=C:\Users\leo\Desktop\versao sistema vendas\SISTEMA VENDAS 0.0.4\Unit1.dfm</Transaction>
+    <Transaction>2022/07/06 15:29:31.363,C:\Users\leo\Desktop\versao sistema vendas\SISTEMA VENDAS 0.0.4\Unitvendas.pas=C:\Users\leo\Desktop\versao sistema vendas\SISTEMA VENDAS 0.0.4\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>
