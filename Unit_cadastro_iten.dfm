@@ -15,80 +15,44 @@ object form_cadastro_iten: Tform_cadastro_iten
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 37
-    Top = 21
+    Left = 24
+    Top = 24
     Width = 31
     Height = 13
     Caption = 'codigo'
     FocusControl = DBEdit1
   end
   object Label2: TLabel
-    Left = 42
+    Left = 64
     Top = 96
     Width = 26
     Height = 13
     Caption = 'nome'
-    FocusControl = DBEdit2
+    FocusControl = db_nome
   end
   object Label3: TLabel
-    Left = 38
-    Top = 158
+    Left = 64
+    Top = 152
     Width = 53
     Height = 13
     Caption = 'fornecedor'
     FocusControl = DBEdit3
   end
   object Label4: TLabel
-    Left = 37
-    Top = 216
+    Left = 64
+    Top = 195
     Width = 27
     Height = 13
     Caption = 'preco'
     FocusControl = DBEdit4
   end
   object Label5: TLabel
-    Left = 192
-    Top = 216
+    Left = 232
+    Top = 195
     Width = 54
     Height = 13
     Caption = 'quantidade'
     FocusControl = DBEdit5
-  end
-  object DBEdit1: TDBEdit
-    Left = 38
-    Top = 40
-    Width = 134
-    Height = 21
-    DataField = 'codigo'
-    DataSource = DataSourceCadIten
-    TabOrder = 0
-  end
-  object DBEdit2: TDBEdit
-    Left = 37
-    Top = 115
-    Width = 325
-    Height = 21
-    DataField = 'nome'
-    DataSource = DataSourceCadIten
-    TabOrder = 1
-  end
-  object DBEdit3: TDBEdit
-    Left = 38
-    Top = 177
-    Width = 325
-    Height = 21
-    DataField = 'fornecedor'
-    DataSource = DataSourceCadIten
-    TabOrder = 2
-  end
-  object DBEdit4: TDBEdit
-    Left = 37
-    Top = 235
-    Width = 135
-    Height = 21
-    DataField = 'preco'
-    DataSource = DataSourceCadIten
-    TabOrder = 3
   end
   object Panel1: TPanel
     Left = 0
@@ -98,7 +62,7 @@ object form_cadastro_iten: Tform_cadastro_iten
     Align = alBottom
     Color = clHighlight
     ParentBackground = False
-    TabOrder = 4
+    TabOrder = 0
     object btInserir: TSpeedButton
       Left = 256
       Top = 16
@@ -120,7 +84,7 @@ object form_cadastro_iten: Tform_cadastro_iten
       Top = 16
       Width = 73
       Height = 25
-      Caption = 'Alterar'
+      Caption = 'Cadastrar'
       OnClick = btAlterarClick
     end
     object btCancelar: TSpeedButton
@@ -132,56 +96,90 @@ object form_cadastro_iten: Tform_cadastro_iten
       OnClick = btCancelarClick
     end
   end
+  object DBEdit1: TDBEdit
+    Left = 24
+    Top = 40
+    Width = 134
+    Height = 21
+    DataField = 'codigo'
+    DataSource = DataSource1
+    TabOrder = 1
+  end
+  object db_nome: TDBEdit
+    Left = 64
+    Top = 115
+    Width = 324
+    Height = 21
+    DataField = 'nome'
+    DataSource = DataSource1
+    TabOrder = 2
+  end
+  object DBEdit3: TDBEdit
+    Left = 64
+    Top = 168
+    Width = 329
+    Height = 21
+    DataField = 'fornecedor'
+    DataSource = DataSource1
+    TabOrder = 3
+  end
+  object DBEdit4: TDBEdit
+    Left = 64
+    Top = 214
+    Width = 153
+    Height = 21
+    DataField = 'preco'
+    DataSource = DataSource1
+    TabOrder = 4
+  end
   object DBEdit5: TDBEdit
-    Left = 192
-    Top = 235
-    Width = 170
+    Left = 232
+    Top = 211
+    Width = 161
     Height = 21
     DataField = 'quantidade'
-    DataSource = DataSourceCadIten
+    DataSource = DataSource1
     TabOrder = 5
   end
-  object TFD_tb_estoque: TFDTable
+  object TFD_tb_estoque: TFDQuery
     Active = True
-    IndexFieldNames = 'codigo'
     Connection = conexao.conexaobanco
-    Exclusive = True
-    TableName = 'dados.tb_estoque'
-    Left = 360
+    SQL.Strings = (
+      'select * from tb_estoque'
+      'where codigo = 1 order by codigo'
+      ''
+      '')
+    Left = 344
     Top = 24
-    object TFD_tb_estoquecodigo: TIntegerField
+    object TFD_tb_estoquecodigo: TFDAutoIncField
       FieldName = 'codigo'
-      Origin = 'codigo'
-      ProviderFlags = [pfInWhere]
-      Required = True
+      ReadOnly = True
     end
     object TFD_tb_estoquenome: TStringField
       FieldName = 'nome'
-      Origin = 'nome'
       Required = True
       Size = 45
     end
     object TFD_tb_estoquefornecedor: TStringField
       FieldName = 'fornecedor'
-      Origin = 'fornecedor'
-      Required = True
-      Size = 45
-    end
-    object TFD_tb_estoquepreco: TStringField
-      FieldName = 'preco'
-      Origin = 'preco'
       Required = True
       Size = 45
     end
     object TFD_tb_estoquequantidade: TIntegerField
       FieldName = 'quantidade'
-      Origin = 'quantidade'
       Required = True
     end
+    object TFD_tb_estoquepreco: TBCDField
+      AutoGenerateValue = arDefault
+      FieldName = 'preco'
+      Origin = 'preco'
+      Precision = 8
+      Size = 2
+    end
   end
-  object DataSourceCadIten: TDataSource
+  object DataSource1: TDataSource
     DataSet = TFD_tb_estoque
-    Left = 440
-    Top = 16
+    Left = 456
+    Top = 24
   end
 end

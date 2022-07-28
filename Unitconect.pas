@@ -16,6 +16,7 @@ type
     FDTable1: TFDTable;
     DataSource1: TDataSource;
     FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink;
+    DataSource2: TDataSource;
   private
     { Private declarations }
   public
@@ -28,6 +29,9 @@ var
 implementation
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
+
+uses Unit_cadastro_iten, Unit_cadastros, Unit_entrada_estoque, Unit_MENU,
+  Unit_pesquisa, Unitpadrao, Unitvendas;
 
 {$R *.dfm}
 

@@ -12,28 +12,28 @@ uses
 
 type
   Tform_cadastro_iten = class(TForm)
-    TFD_tb_estoque: TFDTable;
-    DataSourceCadIten: TDataSource;
-    TFD_tb_estoquecodigo: TIntegerField;
-    TFD_tb_estoquenome: TStringField;
-    TFD_tb_estoquefornecedor: TStringField;
-    TFD_tb_estoquepreco: TStringField;
-    Label1: TLabel;
-    DBEdit1: TDBEdit;
-    Label2: TLabel;
-    DBEdit2: TDBEdit;
-    Label3: TLabel;
-    DBEdit3: TDBEdit;
-    Label4: TLabel;
-    DBEdit4: TDBEdit;
     Panel1: TPanel;
     btInserir: TSpeedButton;
     btDeletar: TSpeedButton;
     btAlterar: TSpeedButton;
     btCancelar: TSpeedButton;
+    TFD_tb_estoque: TFDQuery;
+    TFD_tb_estoquecodigo: TFDAutoIncField;
+    TFD_tb_estoquenome: TStringField;
+    TFD_tb_estoquefornecedor: TStringField;
     TFD_tb_estoquequantidade: TIntegerField;
+    Label1: TLabel;
+    DBEdit1: TDBEdit;
+    DataSource1: TDataSource;
+    Label2: TLabel;
+    db_nome: TDBEdit;
+    Label3: TLabel;
+    DBEdit3: TDBEdit;
+    Label4: TLabel;
+    DBEdit4: TDBEdit;
     Label5: TLabel;
     DBEdit5: TDBEdit;
+    TFD_tb_estoquepreco: TBCDField;
     procedure btInserirClick(Sender: TObject);
     procedure btAlterarClick(Sender: TObject);
     procedure btCancelarClick(Sender: TObject);
@@ -62,6 +62,7 @@ begin
   btCancelar.Enabled :=false;
 
   TFD_tb_estoque.Cancel;
+  TFD_tb_estoque.Close;
 end;
 
 procedure Tform_cadastro_iten.btDeletarClick(Sender: TObject);
@@ -75,13 +76,17 @@ end;
 
 procedure Tform_cadastro_iten.btInserirClick(Sender: TObject);
 begin
- btInserir.Enabled :=false;
+  btInserir.Enabled :=false;
   btDeletar.Enabled :=false;
 
   btAlterar.Enabled :=true;
   btCancelar.Enabled :=true;
 
+  TFD_tb_estoque.Open;
   TFD_tb_estoque.Append;
+  db_nome.SetFocus;
+
+
 end;
 
 procedure Tform_cadastro_iten.btAlterarClick(Sender: TObject);
@@ -93,8 +98,13 @@ begin
   btCancelar.Enabled :=false;
 
   TFD_tb_estoque.Post;
+  TFD_tb_estoque.Close;
 
-  ShowMessage('Registro alterado!');
+
+  ShowMessage('Iten cadastrado com sucesso!');
+
+  TFD_tb_estoque.Close;
+
 
 end;
 

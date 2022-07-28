@@ -15,17 +15,21 @@ object conexao: Tconexao
   end
   object FDTable1: TFDTable
     Connection = conexaobanco
-    Left = 160
-    Top = 80
+    Left = 208
+    Top = 32
   end
   object DataSource1: TDataSource
     DataSet = FDTable1
-    Left = 240
-    Top = 144
+    Left = 360
+    Top = 48
   end
   object FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
     VendorLib = 'C:\Windows\SysWOW64\libmysql.dll'
-    Left = 16
-    Top = 232
+    Left = 64
+    Top = 200
+  end
+  object DataSource2: TDataSource
+    Left = 368
+    Top = 112
   end
 end

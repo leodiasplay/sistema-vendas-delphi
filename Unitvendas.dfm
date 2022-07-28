@@ -2,8 +2,8 @@ object Form_vendas: TForm_vendas
   Left = 0
   Top = 0
   Caption = 'Vendas'
-  ClientHeight = 561
-  ClientWidth = 986
+  ClientHeight = 439
+  ClientWidth = 1006
   Color = clInactiveCaption
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,485 +11,662 @@ object Form_vendas: TForm_vendas
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poMainFormCenter
+  OnCreate = FormCreate
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 8
-    Top = 141
-    Width = 238
-    Height = 39
-    Caption = 'Lista itens venda'
+    Left = 16
+    Top = 96
+    Width = 52
+    Height = 13
+    Caption = 'id_venda'
+    Color = clInactiveCaptionText
+    FocusControl = db_id_venda
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -32
+    Font.Height = -11
     Font.Name = 'Tahoma'
-    Font.Style = []
+    Font.Style = [fsBold]
+    ParentColor = False
     ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 16
+    Top = 142
+    Width = 84
+    Height = 13
+    Caption = 'id_forma_pgto'
+    FocusControl = db_id_forma_pgto
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 152
+    Top = 96
+    Width = 83
+    Height = 13
+    Caption = 'data_cadastro'
+    Color = clInactiveCaptionText
+    FocusControl = db_cadastro
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 151
+    Top = 142
+    Width = 65
+    Height = 13
+    Caption = 'pagamento'
+    FocusControl = DBEdit1
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label6: TLabel
+    Left = 323
+    Top = 142
+    Width = 42
+    Height = 13
+    Caption = 'parcela'
+    FocusControl = db_parcela
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label12: TLabel
+    Left = 763
+    Top = 301
+    Width = 52
+    Height = 13
+    Caption = 'desconto'
+    FocusControl = db_desconto
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object bt_incluir_produto: TSpeedButton
+    Left = 566
+    Top = 21
+    Width = 106
+    Height = 29
+    HelpType = htKeyword
+    Caption = 'Incluir produto'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    Visible = False
+    OnClick = bt_incluir_produtoClick
+  end
+  object Label7: TLabel
+    Left = 759
+    Top = 231
+    Width = 39
+    Height = 13
+    Caption = 'id_iten'
+    FocusControl = db_id_iten
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object SpeedButton2: TSpeedButton
+    Left = 871
+    Top = 337
+    Width = 113
+    Height = 28
+    Caption = 'Remover produto'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label8: TLabel
+    Left = 695
+    Top = 266
+    Width = 54
+    Height = 13
+    Caption = 'quantidade'
+  end
+  object Label9: TLabel
+    Left = 759
+    Top = 266
+    Width = 65
+    Height = 13
+    Caption = 'Quantidade'
+    FocusControl = db_quantidade
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 323
+    Top = 96
+    Width = 29
+    Height = 13
+    Caption = 'valor'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object bt_busca: TSpeedButton
+    Left = 927
+    Top = 224
+    Width = 71
+    Height = 25
+    Caption = 'Pesquisar'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    OnClick = bt_buscaClick
+  end
+  object bt_adiconar: TSpeedButton
+    Left = 763
+    Top = 337
+    Width = 102
+    Height = 28
+    Caption = 'Adicionar'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    OnClick = bt_adiconarClick
   end
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 986
+    Width = 1006
     Height = 81
     Align = alTop
-    Color = clHighlight
+    Color = clBlack
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1120
-    object Label2: TLabel
-      Left = 24
-      Top = 22
-      Width = 68
-      Height = 16
-      Caption = 'Cod.venda'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -13
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      ParentFont = False
-    end
   end
   object Panel2: TPanel
     Left = 0
-    Top = 493
-    Width = 986
+    Top = 371
+    Width = 1006
     Height = 68
     Align = alBottom
     Color = clHighlight
     ParentBackground = False
-    TabOrder = 1
-    ExplicitLeft = -8
-    object SpeedButton1: TSpeedButton
-      Left = 628
+    TabOrder = 9
+    object bt_iniciar_venda: TSpeedButton
+      Left = 533
       Top = 16
-      Width = 137
-      Height = 41
-      Caption = 'Cancelar venda '
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -12
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      Glyph.Data = {
-        36100000424D3610000000000000360000002800000020000000200000000100
-        20000000000000100000C40E0000C40E00000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        00000000D8140000C1600101C3A20101CFD90202D6F30303D8FA0404DAFA0505
-        D9F40909D7DB1010CDA61717D0630A0AD4180000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        00000000000000000000000000000000000000000000000000000000C5280000
-        BCA40000C9F60000DAFF0000EDFF0000F3FF0000F6FF0000F8FF0000F8FF0000
-        F6FF0000F3FF0000EEFF0A0AE0FF1B1BD7F93D3DD8AB4B4BDE2F000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000CC0A0000BA920000C2FB0000
-        D6FF0000DFFF0000E5FF0000EAFF0000EEFF0000F2FF0000F3FF0000F3FF0000
-        F2FF0000EEFF0000EAFF0000E5FF0000DFFF0707D9FF3A3AD8FD7474DF9C6666
-        DD0F000000000000000000000000000000000000000000000000000000000000
-        00000000000000000000000000000000BA250000B8D60000C6FF0000D0FF0000
-        D5FF0000DBFF0000D9FF0303D0FE0404CDE10505CBBD0909CCA50C0CCDA41111
-        D1BA1C1CD6DE1C1CDBFD1414DFFF0202DBFF0000D5FF0000D0FF2626D2FF8A8A
-        E4DE9494E4300000000000000000000000000000000000000000000000000000
-        000000000000000000000000B9330000B8EB0000C2FF0000C8FF0000CCFF0101
-        CAFF0202C3E60404BD7D0000D525000000000000000000000000000000000000
-        0000000000004747DF205C5CDE766B6BE2E14747DDFF0404CDFF0000C7FF1313
-        C7FF9595E4F3A8A8EB4100000000000000000000000000000000000000000000
-        0000000000000000B1240000B6EB0000BDFF0000C1FF0000C4FF0000C8FF0303
-        BCC00000C6090000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000B6B6FF07B2B2EE7BA8A8ECF72323CCFF0000
-        C1FF0E0EC1FFA1A1E6F3A8A8EA32000000000000000000000000000000000000
-        000000009F080101B5D30000B9FF0000BCFF0000BEFF0000C1FF0000C5FF0303
-        C2FE0606C1700000000000000000000000000000000000000000000000000000
-        00000000000000000000000000000000000000000000D8D8F63CD7D7F5E83737
-        CCFF0000BCFF1A1AC0FFB3B3EBDF8787E1110000000000000000000000000000
-        00000000B58B0000B6FF0000B8FF0000BAFF0101BCFF0000BEFF0000C1FF0000
-        C4FF0606C3FE0D0DC47200000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000E8E8F92EDFDF
-        F6EA2E2EC6FF0000B8FF3D3DC8FFB4B4EB9E0000000000000000000000000000
-        B4220101B4FA0000B5FF0000B7FF0303B9F90606BBA60404BDFF0000BEFF0000
-        C0FF0000C3FF0B0BC4FE1616C76F000000000000000000000000000000000000
-        000000000000000000000000000000000000000000000000000000000000ECEC
-        FB44C8C8F0F80B0BBAFF0101B6FF7A7AD9FD8484D93000000000000000000101
-        B69A0000B4FF0000B4FF0202B7FF0505BA83000000000A0ABD8C0707BEFF0000
-        BDFF0000BFFF0000C1FF1313C6FE3131CF710000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000E2E2F7857272D6FF0000B5FF1616BBFF9696E4AA000000000000BF0C0202
-        B5F20000B3FF0000B4FF0606BAEA0000B90B00000000000000001414C28A0D0D
-        C0FF0000BCFF0000BDFF0000BEFF1F1FC9FE5656D87000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000E7E7FF0BBFBFEEE20A0AB7FF0000B4FF5858D1F85858D2170303B6540101
-        B4FF0000B3FF0202B5FF0909BA83000000000000000000000000000000002929
-        CA8C1717C2FF0000BAFF0000BBFF0000BCFF3737CDFE7979DD73000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        000000000000B9B9ED763D3DC6FF0000B3FF2525C0FF6060D7620505B7930000
-        B3FF0000B3FF0707B9FF0000B52D000000000000000000000000000000000000
-        00005353D68A2B2BC7FF0000B9FF0000B9FF0101BAFF5555D1FE9F9FE7750000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000007F7FDA1C5D5DD1FC0000B3FF0404B4FF4B4BD1A30505B7C80000
-        B2FF0000B3FF0C0CBCE700000000000000000000000000000000000000000000
-        0000000000008282DE8F4A4ACDFF0101B7FF0000B7FF0202B8FF6E6ED7FEB4B4
-        EB77000000000000000000000000000000000000000000000000000000000000
-        000000000000000000005C5CD4D90000B2FF0000B2FF2828C6D80505B8EA0000
-        B2FF0000B2FF1010BFC800000000000000000000000000000000000000000000
-        000000000000FFFFFF01B8B8EC946C6CD5FF0303B6FF0000B6FF0404B7FF7B7B
-        DAFEBBBBEE780000000000000000000000000000000000000000000000000000
-        000000000000000000004646D0B00000B2FF0000B2FF1A1AC1F30808B9F80000
-        B2FF0000B1FF1616C1B200000000000000000000000000000000000000000000
-        00000000000000000000FFFFFF03DBDBF59E8383DBFF0B0BBCFF1313C6FF2020
-        CDFF8484E3FEB5B5ED7600000000000000000000000000000000000000000000
-        000000000000000000003636CD950101B2FF0000B2FF1313BEF90B0BBBF80000
-        B2FF0000B1FF1F1FC4B200000000000000000000000000000000000000000000
-        0000000000000000000000000000FFFFFF05ECECFAA69999E8FF1D1DCDFF1B1B
-        CCFF2020CDFF7474DFFE9999E674000000000000000000000000000000000000
-        000000000000000000003434CF960C0CB7FF0000B2FF0D0DBCF92121C4EA0404
-        B3FF0000B1FF2626C7C900000000000000000000000000000000000000000000
-        000000000000000000000000000000000000DFDFFF08EEEEFAA99595E7FF1D1D
-        CEFF1C1CCDFF2121CFFF5C5CDAFE7777E1710000000000000000000000000000
-        000000000000000000002D2DCCB24747D5FF0E0EB8FF0909BAF23434CFC64444
-        D2FF2626C3FF3838CCE80000FF01000000000000000000000000000000000000
-        00000000000000000000000000000000000000000000FFFFFF06E7E7F8A38686
-        E5FF1B1BCEFF1D1DCEFF2323CFFF4343D5FE5757D87200000000000000000000
-        000000000000000000002828CADA4747D7FF4141D4FF0E0EBCD63F3FD1914242
-        D4FF4444D4FF5454D8FF6868DA31000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000CCCCFF05D0D0
-        F5996969DEFF1B1BCEFF1E1ED0FF2323D1FF3333D2FE3232CE6F000000000000
-        0000000000002525C61B2828CCFC3F3FD5FF3D3DD4FF1414C0A05858D9514848
-        D6FF3C3CD3FF4848D6FF8686E287000000000000000000000000000000000000
-        000000000000000000000000000000000000000000000000000000000000FFFF
-        FF01A2A2EA924949D8FF1919CFFF1D1DD0FF2222D1FF2727CFFE2121CB710000
-        0000000000001616C4712E2ECFFF3737D3FF2929CCFF1212C05E8B8BE70B6767
-        DDF03333D2FF3434D3FF8888E4EEA3A3EC0E0000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000006E6EDF8B2E2ED3FF1919D0FF1C1CD0FF2121D0FF1F1FCCFE1919
-        C6700000CC051515C3DE2F2FD2FF2F2FD2FF1717C2F62828C913000000009B9B
-        E9974848D7FF2B2BD2FF5A5ADCFFB7B7EE8E0000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        000000000000000000004141D58C2020CFFF1717D0FF1B1BD0FF1E1ED0FF1919
-        C9FE0F0FBFB91D1DCBFF2727D0FF2525CDFF0B0BBCA20000000000000000A5A5
-        E822A1A1EAF92727D2FF2424D1FF9D9DEAFBC1C1F04600000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        00000000000000000000000000001F1FCB8A1717CCFF1616CFFF1818CFFF1A1A
-        CFFF1B1BCEFF1E1ECFFF2020CFFF1010C2FB1313BD2700000000000000000000
-        0000DADAF6917676E2FF1B1BD0FF2D2DD4FFBDBDF1EDBDBDF42F000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000001212C68B1111CAFF1313CEFF1515
-        CEFF1616CDFF1717CCFF1414C8FF0707BA910000000000000000000000000000
-        0000DDDDEE0FE4E4F9DA4C4CDBFF1414CFFF2E2ED5FFB6B6EFECB5B5EF420000
-        0000000000000000000000000000000000000000000000000000000000000000
-        000000000000000000000000000000000000000000000B0BC2A00E0ECAFF1010
-        CCFF1111CCFF1111CAFF0707BAD50000B20A0000000000000000000000000000
-        000000000000EBEBFA33DFDFF8F03737D7FF0E0ECFFF1E1ED3FF8989E8FA9F9F
-        EA887F7FE90C0000000000000000000000000000000000000000000000000000
-        00000000000000000000000000000000DA070808C1780909C4F60A0ACDFF0C0C
-        CCFF0C0CCAFF0505BCEB0606BA25000000000000000000000000000000000000
-        00000000000000000000E8E8F743DADAF7EF3D3DD9FF0909D0FF0909D2FF3838
-        DAFF6868E0EB6B6BE1822828D62C000000000000000000000000000000000000
-        0000000000000000C7250C0CC27A0A0AC4E30707CBFF0606CEFF0707CDFF0808
-        CAFF0404BBEB0505B93300000000000000000000000000000000000000000000
-        0000000000000000000000000000DEDEF42FD5D5F6D55858E0FF0808D3FF0505
-        D4FF0303D6FF1515D9FF2C2CD9FF2A2AD6E52424D4C41C1CD0B01717D0AF1111
-        CCC10D0DCCE20909CDFE0404D1FF0202D4FF0303D1FF0404CFFF0404C8FF0303
-        BBD30000B8240000000000000000000000000000000000000000000000000000
-        000000000000000000000000000000000000B9B9E70BBABAF08A7979E5F81B1B
-        D9FF0202D8FF0202DAFF0101DCFF0101DDFF0000DEFF0000DFFF0000DFFF0000
-        DEFF0000DCFF0101DAFF0101D8FF0202D5FF0202D0FF0303C1FA0101BB8C0000
-        BF08000000000000000000000000000000000000000000000000000000000000
-        00000000000000000000000000000000000000000000000000007373E61F6E6E
-        E2963C3CDBEF1919DAFF0404DFFF0000E2FF0000E3FF0000E3FF0000E3FF0000
-        E2FF0000E1FF0101DCFF0202D0FF0303C6F20303BD9B0000C423000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        00005C5CE70B2525D3522424D3911515D2C80D0DD4EB0909D3F90707D1F90505
-        D0EC0505C9CA0303C1950303C6550000D70D0000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000}
-      Layout = blGlyphRight
-      ParentFont = False
-    end
-    object SpeedButton2: TSpeedButton
-      Left = 790
-      Top = 16
-      Width = 138
-      Height = 41
-      Caption = 'Finalizar venda'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -12
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      Glyph.Data = {
-        36100000424D3610000000000000360000002800000020000000200000000100
-        20000000000000100000C40E0000C40E00000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000216530B2E000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        00000000000000000000000000000A3F0018245C16B5316822F51F5F12380000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        000000000000000000001348074326601AE537702CFF376D2AFF316821E31C5E
-        091B000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        000000000000144B0A662B6922F83A7732FF39742FFF38712DFF376E2AFF2E68
-        20C61C5500090000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        000318500D8930732BFD3B7F37FF3B7C35FF3A7833FF397530FF38722EFF376F
-        2BFE2B661C9F0000000100000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000002E000B1B55
-        12AA367E35FE3D863DFF3C833BFF3C8038FF3B7C36FF3A7933FF397631FF3973
-        2EFF376F2BFE28661A7200000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        000000000000000000000000000000000000000000000A3F00181E5D17C73B89
-        3EFF3F8D43FF3E8A40FF3D873EFF3D843BFF3C8139FF3B7D37FF3A7A34FF3A77
-        32FF39742FFF356F29FA23641547000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000001145052C23671FDE3F9347FF4194
-        48FF409146FF3F8E43FF3E8B41FF3E873FFF3D843CFF3C813AFF3B7E37FF3B7B
-        35FF3A7832FF397530FF336F27EC215D14260000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        000000000000000000000000000012480746297329EE429C4EFF429A4DFF4297
-        4BFF419549FF409247FF3F8F44FF3F8C42FF388138FF27671FFF3C823AFF3C7F
-        38FF3B7C36FF3A7933FF397631FF316D25D40F5F001000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        00000000000000000000144B0A66308135F844A455FF44A153FF439E51FF429B
-        4EFF42984CFF41954AFF409347FF378439FF18500EFF134508FF296A22FF3C83
-        3BFF3C8039FF3B7D36FF3A7A34FF397731FF2E6C22B100550003000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        000000000003124507881D5B17FE45A858FF46A858FF45A556FF44A254FF439F
-        51FF439C4FFF42994DFF37883BEF164C0BFC134508FF134508FF134708FF3074
-        2CFF3D843CFF3C813AFF3B7E37FF3A7B35FF397732FF2A6B1E85000000000000
-        0000000000000000000000000000000000000000000000000000000000000033
-        000A124507AA124408FE134508FF287229FF46AB5BFF46A959FF45A657FF44A3
-        54FF44A052FF388C3EDD1F63122911430784134508FF134508FF134508FF154A
-        0AFF367D34FF3D853DFF3C823AFF3B7F38FF3B7C35FF387730FC28671C590000
-        0000000000000000000000000000000000000000000000000000000000000F3F
-        0010124407D7134508FF134508FF134508FF308337FF47AC5CFF46AA5AFF45A7
-        57FF368D3DCF1C5E091B0000000000000003114307AD134508FF134508FF1345
-        08FF19510FFF3A843BFF3D863DFF3C833BFF3C8039FF3B7D36FF36762FF32364
-        1433000000000000000000000000000000000000000000000000000000000000
-        00000D410627124407EB134508FF134508FF144809FF389345FF46AD5CFF358C
-        3CBE0F5A00110000000000000000000000001236000E124407CF134508FF1345
-        08FF134508FF1E5B16FF3D893FFF3D873EFF3D843CFF3C8139FF3B7E37FF3375
-        2CDF155F0A180000000000000000000000000000000000000000000000000000
-        00000000000012430744124407F8134508FF134508FF164D0DFE2E8231AA0055
-        000900000000000000000000000000000000000000000F450721124407E81345
-        08FF134508FF134508FF25661FFF3E8B41FF3E883FFF3D853DFF3C823AFF3B7F
-        38FF307228C10048000700000000000000000000000000000000000000000000
-        0000000000000000000011450767124407FD114407E31042055C000000020000
-        00000000000000000000000000000000000000000000000000001041043E1245
-        07F7134508FF134508FF134608FF2D732AFF3F8C42FF3E8940FF3D863DFF3C83
-        3BFF3B7F38FF2D6F249900000001000000000000000000000000000000000000
-        0000000000000000000000000000124506551248000E00000000000000000000
-        0000000000000000000000000000000000000000000000000000000000001144
-        0764124407FD134508FF134508FF144809FF347E34FF3F8D43FF3E8A40FF3D87
-        3EFF3D843CFF3A7F37FE286D216B000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        00001143078F134408FE134508FF134508FF174D0CFF3A883DFF3F8E44FF3E8B
-        41FF3E883FFF3D853CFF397E35F826681B420000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000003F0004124406B7134508FF134508FF134508FF1B5612FF3E8E43FF3F8F
-        44FF3F8C42FF3E8940FF3D863DFF33782DE40055000900000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000F3C0011134507D6134508FF134508FF134508FF21611BFF4092
-        47FF409045FF3F8D43FF3A863BFB276D1C5B0000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        000000000000000000000C3F0628124507EC134508FF134508FF134508FF296F
-        26FF419448FF3C8C41FC28702066000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        000000000000000000000000000011430748124407F9134508FF134508FF1346
-        08FF2F792EFD2874247000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000001244066F124407FE124407F51144
-        07AC1148064A0000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        000000000000000000000000000000000000000000011045064D0C3F00140000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000}
-      Layout = blGlyphRight
-      ParentFont = False
-    end
-  end
-  object Panel3: TPanel
-    Left = 8
-    Top = 186
-    Width = 513
-    Height = 294
-    Color = clHighlightText
-    ParentBackground = False
-    TabOrder = 2
-    object DBGrid1: TDBGrid
-      Left = 1
-      Top = 1
-      Width = 511
-      Height = 292
-      Align = alClient
-      DataSource = conexao.DataSource1
-      TabOrder = 0
-      TitleFont.Charset = DEFAULT_CHARSET
-      TitleFont.Color = clWindowText
-      TitleFont.Height = -11
-      TitleFont.Name = 'Tahoma'
-      TitleFont.Style = []
-    end
-  end
-  object DBEdit1: TDBEdit
-    Left = 24
-    Top = 44
-    Width = 97
-    Height = 21
-    DataField = 'cod_venda'
-    TabOrder = 3
-  end
-  object Panel4: TPanel
-    Left = 543
-    Top = 186
-    Width = 424
-    Height = 294
-    TabOrder = 4
-    object Label4: TLabel
-      Left = 16
-      Top = 178
-      Width = 48
-      Height = 13
-      Caption = 'Cod.Iten'
-      FocusControl = DBEdit3
+      Width = 105
+      Height = 33
+      Caption = 'Iniciar venda'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
+      OnClick = bt_iniciar_vendaClick
     end
-    object Label5: TLabel
-      Left = 151
-      Top = 177
-      Width = 71
-      Height = 14
-      Caption = 'Quantidade'
-      FocusControl = DBEdit4
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -12
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      ParentFont = False
-    end
-    object Label6: TLabel
-      Left = 20
-      Top = 240
-      Width = 117
-      Height = 39
-      Caption = 'TOTAL:'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -32
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      ParentFont = False
-    end
-    object SpeedButton3: TSpeedButton
-      Left = 282
-      Top = 208
+    object SpeedButton1: TSpeedButton
+      Left = 644
+      Top = 16
       Width = 105
       Height = 33
-      Caption = 'Incluir Iten'
+      Caption = 'Finalizar venda'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -12
+      Font.Height = -11
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
+      OnClick = SpeedButton1Click
     end
-    object SpeedButton4: TSpeedButton
-      Left = 280
-      Top = 247
-      Width = 105
-      Height = 33
-      Caption = 'Remover Iten'
+    object panel_Valor: TPanel
+      Left = 0
+      Top = 0
+      Width = 527
+      Height = 65
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -12
+      Font.Height = -27
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
-    end
-    object SpeedButton5: TSpeedButton
-      Left = 70
-      Top = 168
-      Width = 69
-      Height = 23
-      Caption = 'Pesquisar'
-    end
-    object Label3: TLabel
-      Left = 160
-      Top = 240
-      Width = 70
-      Height = 39
-      Caption = '0,00'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -32
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      ParentFont = False
-    end
-    object DBEdit3: TDBEdit
-      Left = 16
-      Top = 197
-      Width = 129
-      Height = 20
-      DataField = 'iten'
       TabOrder = 0
     end
-    object DBEdit4: TDBEdit
-      Left = 151
-      Top = 197
-      Width = 90
-      Height = 20
-      DataField = 'quantidade'
-      TabOrder = 1
+  end
+  object db_id_venda: TDBEdit
+    Left = 16
+    Top = 115
+    Width = 124
+    Height = 21
+    DataField = 'id_venda'
+    DataSource = DataSource_tb_venda
+    TabOrder = 1
+  end
+  object db_id_forma_pgto: TDBEdit
+    Left = 16
+    Top = 161
+    Width = 124
+    Height = 21
+    DataField = 'id_forma_pgto'
+    DataSource = DataSource_tb_venda
+    TabOrder = 3
+    OnExit = db_id_forma_pgtoExit
+  end
+  object db_cadastro: TDBEdit
+    Left = 151
+    Top = 115
+    Width = 162
+    Height = 21
+    DataField = 'data_cadastro'
+    DataSource = DataSource_tb_venda
+    Enabled = False
+    TabOrder = 2
+  end
+  object DBEdit1: TDBEdit
+    Left = 151
+    Top = 161
+    Width = 162
+    Height = 21
+    DataField = 'pagamento'
+    DataSource = DataSource_tb_venda
+    TabOrder = 4
+  end
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 193
+    Width = 749
+    Height = 172
+    DataSource = DataSource_iten_venda
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 10
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    OnCellClick = DBGrid1CellClick
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'id_sequencia'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'id_venda'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'id_iten'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Descricao'
+        Width = 184
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'valor_unidade'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'quantidade'
+        Width = 86
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'desconto'
+        Visible = True
+      end>
+  end
+  object db_parcela: TDBEdit
+    Left = 323
+    Top = 161
+    Width = 190
+    Height = 21
+    DataField = 'parcela'
+    DataSource = DataSource_tb_venda
+    TabOrder = 5
+  end
+  object db_desconto: TDBEdit
+    Left = 830
+    Top = 298
+    Width = 168
+    Height = 21
+    DataField = 'desconto'
+    DataSource = DataSource_iten_venda
+    TabOrder = 8
+    OnExit = db_descontoExit
+  end
+  object db_id_iten: TDBEdit
+    Left = 830
+    Top = 228
+    Width = 91
+    Height = 21
+    DataField = 'id_iten'
+    DataSource = DataSource_iten_venda
+    TabOrder = 6
+  end
+  object db_quantidade: TDBEdit
+    Left = 830
+    Top = 263
+    Width = 168
+    Height = 21
+    DataField = 'quantidade'
+    DataSource = DataSource_iten_venda
+    TabOrder = 7
+  end
+  object Edit1: TEdit
+    Left = 895
+    Top = 395
+    Width = 86
+    Height = 21
+    TabOrder = 11
+    Text = 'Edit1'
+  end
+  object db_valor: TDBEdit
+    Left = 319
+    Top = 115
+    Width = 194
+    Height = 21
+    DataField = 'valor'
+    DataSource = DataSource_tb_venda
+    TabOrder = 12
+  end
+  object FDQ_tb_venda: TFDQuery
+    Active = True
+    CachedUpdates = True
+    Connection = conexao.conexaobanco
+    SchemaAdapter = FDSchemaAdapter1
+    UpdateOptions.AssignedValues = [uvFetchGeneratorsPoint, uvGeneratorName]
+    UpdateOptions.FetchGeneratorsPoint = gpImmediate
+    UpdateOptions.GeneratorName = 'gen_in_venda'
+    UpdateOptions.AutoIncFields = 'id_venda'
+    SQL.Strings = (
+      'select * from tb_venda'
+      ' WHERE ID_VENDA = 1'
+      'order by id_venda')
+    Left = 632
+    Top = 81
+    object FDQ_tb_vendaid_venda: TFDAutoIncField
+      FieldName = 'id_venda'
+      Origin = 'id_venda'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      ClientAutoIncrement = False
+      ServerAutoIncrement = False
+      AutoIncrementSeed = 1
+      AutoIncrementStep = 1
+      IdentityInsert = True
     end
+    object FDQ_tb_vendaid_forma_pgto: TIntegerField
+      FieldName = 'id_forma_pgto'
+      Origin = 'id_forma_pgto'
+      Required = True
+    end
+    object FDQ_tb_vendadata_cadastro: TSQLTimeStampField
+      AutoGenerateValue = arDefault
+      FieldName = 'data_cadastro'
+      Origin = 'data_cadastro'
+    end
+    object FDQ_tb_vendapagamento: TStringField
+      FieldKind = fkLookup
+      FieldName = 'pagamento'
+      LookupDataSet = Q_forma_pgto
+      LookupKeyFields = 'id_pagamento'
+      LookupResultField = 'meio'
+      KeyFields = 'id_forma_pgto'
+      Size = 100
+      Lookup = True
+    end
+    object FDQ_tb_vendaparcela: TIntegerField
+      AutoGenerateValue = arDefault
+      FieldName = 'parcela'
+      Origin = 'parcela'
+    end
+    object FDQ_tb_vendadinheiro: TBCDField
+      AutoGenerateValue = arDefault
+      FieldName = 'dinheiro'
+      Origin = 'dinheiro'
+      Precision = 11
+      Size = 2
+    end
+    object FDQ_tb_vendatroco: TLargeintField
+      AutoGenerateValue = arDefault
+      FieldName = 'troco'
+      Origin = 'troco'
+    end
+    object FDQ_tb_vendavalor: TBCDField
+      AutoGenerateValue = arDefault
+      FieldName = 'valor'
+      Origin = 'valor'
+      Precision = 8
+      Size = 2
+    end
+  end
+  object DataSource_tb_venda: TDataSource
+    DataSet = FDQ_tb_venda
+    Left = 584
+    Top = 136
+  end
+  object Q_forma_pgto: TFDQuery
+    Active = True
+    Connection = conexao.conexaobanco
+    SQL.Strings = (
+      'select id_pagamento, meio from tb_fr_pagamento')
+    Left = 856
+    Top = 80
+    object Q_forma_pgtoid_pagamento: TFDAutoIncField
+      FieldName = 'id_pagamento'
+      Origin = 'id_pagamento'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
+    end
+    object Q_forma_pgtomeio: TStringField
+      FieldName = 'meio'
+      Origin = 'meio'
+      Required = True
+      Size = 30
+    end
+  end
+  object DataSource_forma_pgto: TDataSource
+    DataSet = Q_forma_pgto
+    Left = 856
+    Top = 136
+  end
+  object FDQ_iten_venda: TFDQuery
+    Active = True
+    CachedUpdates = True
+    IndexesActive = False
+    IndexFieldNames = 'id_venda'
+    AggregatesActive = True
+    MasterSource = DataSource_tb_venda
+    MasterFields = 'id_venda'
+    DetailFields = 'id_venda'
+    Connection = conexao.conexaobanco
+    SchemaAdapter = FDSchemaAdapter1
+    FetchOptions.AssignedValues = [evCache, evDetailCascade]
+    FetchOptions.Cache = [fiBlobs, fiMeta]
+    FetchOptions.DetailCascade = True
+    UpdateOptions.AssignedValues = [uvCheckUpdatable]
+    UpdateOptions.CheckUpdatable = False
+    SQL.Strings = (
+      'select * from iten_venda'
+      'WHERE ID_VENDA = :ID_VENDA'
+      ''
+      ''
+      '      '
+      '      '
+      ''
+      '')
+    Left = 720
+    Top = 80
+    ParamData = <
+      item
+        Name = 'ID_VENDA'
+        DataType = ftAutoInc
+        ParamType = ptInput
+        Value = 1
+      end>
+    object FDQ_iten_vendaid_sequencia: TFDAutoIncField
+      FieldName = 'id_sequencia'
+      Origin = 'id_sequencia'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
+    end
+    object FDQ_iten_vendaid_venda: TIntegerField
+      AutoGenerateValue = arDefault
+      FieldName = 'id_venda'
+      Origin = 'id_venda'
+    end
+    object FDQ_iten_vendaid_iten: TIntegerField
+      AutoGenerateValue = arDefault
+      FieldName = 'id_iten'
+      Origin = 'id_iten'
+    end
+    object FDQ_iten_vendaquantidade: TIntegerField
+      AutoGenerateValue = arDefault
+      FieldName = 'quantidade'
+      Origin = 'quantidade'
+    end
+    object FDQ_iten_vendaDescricao: TStringField
+      FieldKind = fkLookup
+      FieldName = 'Descricao'
+      LookupDataSet = FDQuery_estoqueVenda
+      LookupKeyFields = 'codigo'
+      LookupResultField = 'nome'
+      KeyFields = 'id_iten'
+      Size = 100
+      Lookup = True
+    end
+    object FDQ_iten_vendavalor_unidade: TFloatField
+      FieldKind = fkLookup
+      FieldName = 'valor_unidade'
+      LookupDataSet = FDQuery_estoqueVenda
+      LookupKeyFields = 'codigo'
+      LookupResultField = 'preco'
+      KeyFields = 'id_iten'
+      Lookup = True
+    end
+    object FDQ_iten_vendadesconto: TBCDField
+      AutoGenerateValue = arDefault
+      FieldName = 'desconto'
+      Origin = 'desconto'
+      Precision = 8
+      Size = 2
+    end
+    object FDQ_iten_vendatotal_iten: TBCDField
+      AutoGenerateValue = arDefault
+      FieldName = 'total_iten'
+      Origin = 'total_iten'
+      Precision = 8
+      Size = 2
+    end
+    object FDQ_iten_vendaTotal: TAggregateField
+      FieldName = 'Total'
+      Active = True
+      currency = True
+      DisplayName = ''
+      Expression = 'SUM(total_iten)'
+    end
+  end
+  object DataSource_iten_venda: TDataSource
+    DataSet = FDQ_iten_venda
+    Left = 720
+    Top = 144
+  end
+  object FDQuery_estoqueVenda: TFDQuery
+    Active = True
+    Connection = conexao.conexaobanco
+    SQL.Strings = (
+      'select * from tb_estoque ')
+    Left = 928
+    Top = 104
+    object FDQuery_estoqueVendacodigo: TFDAutoIncField
+      FieldName = 'codigo'
+      Origin = 'codigo'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
+    end
+    object FDQuery_estoqueVendanome: TStringField
+      FieldName = 'nome'
+      Origin = 'nome'
+      Required = True
+      Size = 45
+    end
+    object FDQuery_estoqueVendafornecedor: TStringField
+      FieldName = 'fornecedor'
+      Origin = 'fornecedor'
+      Required = True
+      Size = 45
+    end
+    object FDQuery_estoqueVendaquantidade: TIntegerField
+      FieldName = 'quantidade'
+      Origin = 'quantidade'
+      Required = True
+    end
+    object FDQuery_estoqueVendapreco: TBCDField
+      AutoGenerateValue = arDefault
+      FieldName = 'preco'
+      Origin = 'preco'
+      Precision = 8
+      Size = 2
+    end
+  end
+  object FDSchemaAdapter1: TFDSchemaAdapter
+    Left = 560
+    Top = 88
+  end
+  object DataSource1: TDataSource
+    DataSet = FDQuery_estoqueVenda
+    Left = 784
+    Top = 136
   end
 end
